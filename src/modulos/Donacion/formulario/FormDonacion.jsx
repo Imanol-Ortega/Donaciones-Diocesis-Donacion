@@ -74,11 +74,13 @@ function FormDonacion() {
                 const rp = await guardarDonanteRequest(data);
                 setPosition(null);
                 setPositionLoad([-27.338697141418727, -55.86717871248513]);
-                reset();
                 toastSucess();
+                reset();
             }
         } catch (error) {
-            console.log(error);
+            if (error.name == "AxiosError") {
+                toastError();
+            }
         }
     });
 
@@ -88,6 +90,17 @@ function FormDonacion() {
             autoClose: 5000,
             style: {
                 background: "#212121",
+                color: "white",
+            },
+        });
+    };
+
+    const toastError = () => {
+        toast.error("Ocurrio un error al enviar", {
+            position: "top-right",
+            autoClose: 5000,
+            style: {
+                background: "ff000",
                 color: "white",
             },
         });
