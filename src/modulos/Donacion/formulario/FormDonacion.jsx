@@ -75,7 +75,6 @@ function FormDonacion() {
                 setPosition(null);
                 setPositionLoad([-27.338697141418727, -55.86717871248513]);
                 toastSucess();
-                reset();
             }
         } catch (error) {
             if (error.name == "AxiosError") {
