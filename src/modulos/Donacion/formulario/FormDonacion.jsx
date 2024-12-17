@@ -111,13 +111,15 @@ function FormDonacion() {
                 <div className="container mx-auto h-full flex flex-1 justify-center items-center">
                     <div className="w-full max-w-lg">
                         <div className="leading-loose ">
-                            <div className="mt-0 sm:mt-72 sm:mb-10 2xl:mt-0 2xl:mb-0">
-                                <div className="max-w-full flex justify-center align-middle p-2 ">
-                                    <img
-                                        src={Diocesis}
-                                        alt="img"
-                                        className="w-48 h-48 rounded-full object-cover"
-                                    />
+                            <div className="flex flex-col">
+                                <div className="w-40 m-auto">
+                                    <picture>
+                                        <img
+                                            src={Diocesis}
+                                            alt="img"
+                                            className="object-cover w-full h-auto rounded-md"
+                                        />
+                                    </picture>
                                 </div>
                                 <form
                                     onSubmit={submit}
@@ -141,7 +143,7 @@ function FormDonacion() {
                                         })}
                                     />
                                     {errors.nombre && (
-                                        <div className="text-white">
+                                        <div className="text-red-500 font-bold -mb-3">
                                             El campo esta vacío
                                         </div>
                                     )}
@@ -157,7 +159,7 @@ function FormDonacion() {
                                         })}
                                     />
                                     {errors.telefono && (
-                                        <div className="text-white">
+                                        <div className="text-red-500 font-bold -mb-3">
                                             El campo esta vacío
                                         </div>
                                     )}
@@ -228,7 +230,7 @@ function FormDonacion() {
                                     </Dialog>
 
                                     {errorMap && (
-                                        <div className="text-white">
+                                        <div className="text-red-500 font-bold">
                                             {errorMap}
                                         </div>
                                     )}
@@ -245,7 +247,7 @@ function FormDonacion() {
                                     />
 
                                     {errors.donacion && (
-                                        <div className="text-white">
+                                        <div className="text-red-500 font-bold -mb-3">
                                             El campo esta vacío
                                         </div>
                                     )}
@@ -261,7 +263,7 @@ function FormDonacion() {
                                     />
 
                                     {errors.observacion && (
-                                        <div className="text-white">
+                                        <div className="text-red-500 font-bold -mb-3">
                                             El campo esta vacío
                                         </div>
                                     )}
